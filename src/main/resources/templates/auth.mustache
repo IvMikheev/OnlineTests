@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>{{title}}</title>
+</head>
+
+<body>
+
+<h2>{{h2}}</h2>
+<div><label>Admin log and pass: admin</label></div>
+<div style="height: 20px"></div>
+<form action="{{action}}" method="post">
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+
+    <div>
+        <label> User Name : <input type="text" name="username" /> </label>
+        <label style="color: red">
+            {{#message}}
+                {{message}}
+            {{/message}}
+        </label>
+    </div>
+
+    <div style="height: 10px"></div>
+
+    <div>
+        <label> Password: <input type="password" name="password" /> </label>
+        <label style="color: red">
+            {{#emptyPass}}
+                {{emptyPass}}
+            {{/emptyPass}}
+        </label>
+    </div>
+
+    <div style="height: 10px"></div>
+
+    <div>
+        <label>
+            {{#signIn}}
+                <input type="submit" value="Sign In">
+                <input type="button" value="Sing Up" onClick='location.href="/signUp"'>
+            {{/signIn}}
+
+            {{#signUp}}
+                <input type="submit" value="Sign Up">
+                <input type="button" value="Sign In" onClick='location.href="/signIn"'>
+            {{/signUp}}
+        </label>
+    </div>
+
+</form>
+</body>
+</html>

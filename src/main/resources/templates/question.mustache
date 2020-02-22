@@ -1,0 +1,81 @@
+<html>
+<head>
+    <title>Add question</title>
+</head>
+<body>
+
+<h2>Add your questions and answers for them</h2>
+
+<div>
+    <form method="post" action="/question">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+
+        <div>
+            <label>Enter the question: <input type="text" name="text" size="50" /> </label>
+            <label style="color: red">
+                {{#message}}
+                    {{message}}
+                {{/message}}
+            </label>
+        </div>
+
+        <h3>Add answers and choose the right one</h3>
+
+        <div>
+            <label style="color: red">
+                {{#answer}}
+                    {{answer}}
+                {{/answer}}
+            </label>
+
+            <label style="color: red">
+                {{#correct}}
+                    {{correct}}
+                {{/correct}}
+            </label>
+        </div>
+
+        <div>
+            <label>Answer 1: <input type="text" name="answer1" />
+                <input type="radio" name="correct1" />
+            </label>
+        </div>
+
+        <div style="height: 10px"></div>
+
+        <div>
+            <label>Answer 2: <input type="text" name="answer2" />
+                <input type="radio" name="correct2" />
+            </label>
+        </div>
+
+        <div style="height: 10px"></div>
+
+        <div>
+            <label>Answer 3: <input type="text" name="answer3" />
+                <input type="radio" name="correct3" />
+            </label>
+        </div>
+
+        <div style="height: 10px"></div>
+
+        <div>
+            <label>Answer 4: <input type="text" name="answer4" />
+                <input type="radio" name="correct4" />
+            </label>
+        </div>
+
+        <div style="height: 20px"></div>
+
+        <div>
+            <label>
+                <input type="button" value="Back" onClick='location.href="/main"'>
+                <input type="submit" value="Add">
+            </label>
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>

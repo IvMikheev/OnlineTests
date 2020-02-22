@@ -1,0 +1,53 @@
+<html>
+
+<body>
+
+<h2>Main page</h2>
+
+<div>
+    <form action="/logout" method="post">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+
+        <div>
+            <label>
+                Hello
+                {{#user}}
+                    {{user}}!
+                {{/user}}
+            </label>
+        </div>
+
+        <div style="height: 10px"></div>
+
+        <input type="submit" value="Sign Out"/>
+
+        <div style="height: 20px"></div>
+    </form>
+</div>
+
+<div>
+    <label>
+        <input type="button" value="Pass The Test" onClick='location.href="/test"'>
+    </label>
+</div>
+
+<div style="height: 10px"></div>
+
+<div>
+    <label>
+        <input type="button" value="All answers" onClick='location.href="/allAnswers"'>
+    </label>
+</div>
+
+<div style="height: 10px"></div>
+
+<div>
+    <label>
+        {{#admin}}
+            <input type="button" value="Add Question" onClick='location.href="/question"'>
+        {{/admin}}
+    </label>
+</div>
+
+</body>
+</html>

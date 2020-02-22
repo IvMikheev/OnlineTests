@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>Test</title>
+</head>
+<body>
+
+<h2>Test</h2>
+
+<div>
+    <form method="post" action="/test">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+
+        {{#entrySet}}
+            <div>
+                <label>
+                    <b>{{key}}</b>
+                    <input type="hidden" name="question" value="{{key}}">
+                </label>
+            </div>
+
+            <div style="height: 20px"></div>
+
+            {{#value}}
+                <div>
+                    <label>
+                        {{this}}
+                    </label>
+                </div>
+
+                <div style="height: 10px"></div>
+            {{/value}}
+
+            <div style="height: 10px"></div>
+
+            <label>
+                Enter the answer: <input type="text" name="answer">
+            </label>
+
+            <div style="height: 20px"></div>
+        {{/entrySet}}
+
+        <div>
+            <label>
+                <input type="button" value="Back" onClick='location.href="/main"'>
+                <input type="submit" value="Finish">
+            </label>
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>

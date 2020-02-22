@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>{{title}}</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table, td, th {
+            border: 1px solid #999;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<h2>{{h2}}</h2>
+<table>
+    <tr>
+        <th>Question</th>
+        <th>Answer</th>
+        <th>Correct</th>
+    </tr>
+
+    {{#userAnswers}}
+        <tr>
+            <td>
+                {{question}}
+            </td>
+            <td>
+                {{answer}}
+            </td>
+            <td>
+                {{#correct}}
+                    <label>✓</label>
+                {{/correct}}
+            </td>
+        </tr>
+    {{/userAnswers}}
+
+</table>
+
+<div style="height: 20px"></div>
+
+<div>
+    <input type="button" value="Back" onClick='location.href="/main"'>
+</div>
+
+</body>
+</html>
